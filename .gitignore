@@ -1,5 +1,4 @@
-# Exclude scripts and other folders - push furtim-backend without scripts
-furtim-backend/scripts/
+# Exclude other folders - push furtim-backend with scripts
 furtim/
 
 # Node modules
