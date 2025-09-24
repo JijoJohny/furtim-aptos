@@ -8,6 +8,7 @@
 import { Aptos, Network } from '@aptos-labs/ts-sdk';
 import { supabaseAdmin } from '../config/supabase';
 import { stealthAddressService } from './stealthAddressService';
+import { getContractConfig, getContractFunctions } from '../config/contracts';
 
 export interface StealthTransaction {
   id: string;
@@ -41,8 +42,10 @@ export class StealthIndexerService {
   private readonly POLL_INTERVAL = 5000; // 5 seconds
 
   constructor() {
+    const config = getContractConfig();
     this.aptos = new Aptos({
-      network: Network.TESTNET,
+      network: config.network as Network,
+      fullnode: config.rpcUrl,
     });
   }
 
@@ -221,8 +224,8 @@ export class StealthIndexerService {
   private isStealthAddressTransaction(transaction: any): boolean {
     // Check if transaction contains stealth address module calls
     if (transaction.payload?.type === 'entry_function_payload') {
-      const function = transaction.payload.function;
-      return function.includes('stealth_address');
+      const functionName = transaction.payload.function;
+      return functionName.includes('stealth_address');
     }
 
     // Check if transaction contains stealth address events

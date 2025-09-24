@@ -15,11 +15,13 @@
       "status": "not_deployed"
     },
     "testnet": {
-      "address": "",
+      "address": "0x2e04b9fdd49ae932c8b08f04540363233093fec62579139722eb4b6a9f33464c",
       "network": "testnet",
       "rpc_url": "https://fullnode.testnet.aptoslabs.com/v1", 
       "explorer_url": "https://explorer.aptoslabs.com/?network=testnet",
-      "status": "not_deployed"
+      "status": "deployed",
+      "deployment_tx": "0x3efb342269d35a75ca47d64aebc5f750cd4f708cefb6258a7493a89da0cc3751",
+      "init_tx": "0x8a74dc29d0d5becdeda05e01ea1f3188f397d258e74ac243330a3a01e3e3ac07"
     },
     "mainnet": {
       "address": "",
@@ -37,6 +39,6 @@
     "deactivate_stealth_address": "{address}::stealth_address::deactivate_stealth_address",
     "reactivate_stealth_address": "{address}::stealth_address::reactivate_stealth_address"
   },
-  "last_updated": "",
+  "last_updated": "2025-01-24T16:02:00Z",
   "notes": "This file stores deployment addresses for different networks. Update after each deployment."
 }

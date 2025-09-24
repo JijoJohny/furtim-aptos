@@ -9,6 +9,7 @@ import { Aptos, Network, Account } from '@aptos-labs/ts-sdk';
 import { supabaseAdmin } from '../config/supabase';
 import { metaKeysService } from './metaKeysService';
 import { stealthAddressService } from './stealthAddressService';
+import { getContractConfig, getContractFunctions } from '../config/contracts';
 
 export interface ClaimablePayment {
   id: string;
@@ -41,8 +42,10 @@ export class StealthClaimService {
   private aptos: Aptos;
 
   constructor() {
+    const config = getContractConfig();
     this.aptos = new Aptos({
-      network: Network.TESTNET,
+      network: config.network as Network,
+      fullnode: config.rpcUrl,
     });
   }
 
