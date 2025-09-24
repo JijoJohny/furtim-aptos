@@ -1,0 +1,78 @@
+# Furtim Backend Database Environment Variables
+# Copy this content to your .env.local file and update with your actual values
+
+# =============================================================================
+# DATABASE CONFIGURATION (Supabase)
+# =============================================================================
+
+# Supabase Project URL
+# Get this from your Supabase project dashboard > Settings > API
+SUPABASE_URL=https://your-project-id.supabase.co
+
+# Supabase Anon Public Key
+# Get this from your Supabase project dashboard > Settings > API
+SUPABASE_ANON_KEY=your_anon_public_key_here
+
+# Supabase Service Role Key (for admin operations)
+# Get this from your Supabase project dashboard > Settings > API
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key_here
+
+# Database Connection URL (optional, for direct PostgreSQL access)
+# DATABASE_URL=postgresql://postgres:[password]@db.[project-id].supabase.co:5432/postgres
+
+# =============================================================================
+# APTOS NETWORK CONFIGURATION
+# =============================================================================
+
+# Aptos Network (testnet, devnet, mainnet)
+APTOS_NETWORK=testnet
+
+# Aptos RPC URL
+APTOS_RPC_URL=https://fullnode.testnet.aptoslabs.com/v1
+
+# Aptos Explorer URL
+APTOS_EXPLORER_URL=https://explorer.aptoslabs.com/?network=testnet
+
+# =============================================================================
+# CONTRACT CONFIGURATION
+# =============================================================================
+
+# Stealth Address Contract Address (deployed on testnet)
+STEALTH_CONTRACT_ADDRESS=0x2e04b9fdd49ae932c8b08f04540363233093fec62579139722eb4b6a9f33464c
+
+# =============================================================================
+# SERVER CONFIGURATION
+# =============================================================================
+
+# Server Port
+PORT=3001
+
+# Server Host
+HOST=localhost
+
+# Environment
+NODE_ENV=development
+
+# =============================================================================
+# SECURITY CONFIGURATION
+# =============================================================================
+
+# JWT Secret for session management
+JWT_SECRET=your_jwt_secret_here
+
+# Encryption key for meta keys (32 characters)
+ENCRYPTION_KEY=your_32_character_encryption_key_here
+
+# =============================================================================
+# LOGGING CONFIGURATION
+# =============================================================================
+
+# Log Level (error, warn, info, debug)
+LOG_LEVEL=info
+
+# =============================================================================
+# CORS CONFIGURATION
+# =============================================================================
+
+# Allowed Origins (comma-separated)
+CORS_ORIGINS=http://localhost:3000,http://localhost:3001
