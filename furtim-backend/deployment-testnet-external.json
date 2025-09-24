@@ -1,0 +1,18 @@
+﻿{
+    "explorer_links":  {
+                           "testnet_explorer":  "https://explorer.aptoslabs.com/?network=testnet",
+                           "account_page":  "https://explorer.aptoslabs.com/account/=testnet"
+                       },
+    "deployment_date":  "2025-09-24 15:10:01",
+    "network":  "testnet",
+    "account_type":  "external",
+    "deployment_address":  "0x2e04b9fdd49ae932c8b08f04540363233093fec62579139722eb4b6a9f33464c",
+    "contract_functions":  {
+                               "initialize":  "0x2e04b9fdd49ae932c8b08f04540363233093fec62579139722eb4b6a9f33464c::stealth_address::initialize",
+                               "deactivate":  "0x2e04b9fdd49ae932c8b08f04540363233093fec62579139722eb4b6a9f33464c::stealth_address::deactivate_stealth_address",
+                               "reactivate":  "0x2e04b9fdd49ae932c8b08f04540363233093fec62579139722eb4b6a9f33464c::stealth_address::reactivate_stealth_address",
+                               "create_payment":  "0x2e04b9fdd49ae932c8b08f04540363233093fec62579139722eb4b6a9f33464c::stealth_address::create_stealth_payment",
+                               "register":  "0x2e04b9fdd49ae932c8b08f04540363233093fec62579139722eb4b6a9f33464c::stealth_address::register_stealth_address",
+                               "claim_payment":  "0x2e04b9fdd49ae932c8b08f04540363233093fec62579139722eb4b6a9f33464c::stealth_address::claim_stealth_payment"
+                           }
+}

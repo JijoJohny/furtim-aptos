@@ -1,0 +1,42 @@
+{
+  "deployments": {
+    "local": {
+      "address": "",
+      "network": "local",
+      "rpc_url": "http://localhost:8080/v1",
+      "explorer_url": "https://explorer.aptoslabs.com/?network=local",
+      "status": "not_deployed"
+    },
+    "devnet": {
+      "address": "",
+      "network": "devnet", 
+      "rpc_url": "https://fullnode.devnet.aptoslabs.com/v1",
+      "explorer_url": "https://explorer.aptoslabs.com/?network=devnet",
+      "status": "not_deployed"
+    },
+    "testnet": {
+      "address": "",
+      "network": "testnet",
+      "rpc_url": "https://fullnode.testnet.aptoslabs.com/v1", 
+      "explorer_url": "https://explorer.aptoslabs.com/?network=testnet",
+      "status": "not_deployed"
+    },
+    "mainnet": {
+      "address": "",
+      "network": "mainnet",
+      "rpc_url": "https://fullnode.mainnet.aptoslabs.com/v1",
+      "explorer_url": "https://explorer.aptoslabs.com/?network=mainnet", 
+      "status": "not_deployed"
+    }
+  },
+  "contract_functions": {
+    "initialize": "{address}::stealth_address::initialize",
+    "register_stealth_address": "{address}::stealth_address::register_stealth_address",
+    "create_stealth_payment": "{address}::stealth_address::create_stealth_payment",
+    "claim_stealth_payment": "{address}::stealth_address::claim_stealth_payment",
+    "deactivate_stealth_address": "{address}::stealth_address::deactivate_stealth_address",
+    "reactivate_stealth_address": "{address}::stealth_address::reactivate_stealth_address"
+  },
+  "last_updated": "",
+  "notes": "This file stores deployment addresses for different networks. Update after each deployment."
+}

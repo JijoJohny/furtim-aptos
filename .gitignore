@@ -1,5 +1,5 @@
-# Exclude backend and other folders - only push install_cli.py and furtim-ui contents
-furtim-backend/
+# Exclude scripts and other folders - push furtim-backend without scripts
+furtim-backend/scripts/
 furtim/
 
 # Node modules
