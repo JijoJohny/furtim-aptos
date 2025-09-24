@@ -1,0 +1,357 @@
+.pin-verification-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 100px; /* Space for fixed bottom nav */
+}
+
+.pin-verification-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  overflow-y: auto;
+  min-height: calc(100vh - 200px);
+}
+
+.pin-verification-content {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  border-radius: 24px;
+  padding: 40px 32px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.pin-verification-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #34D399 0%, #10B981 100%);
+  border-radius: 24px 24px 0 0;
+}
+
+.pin-verification-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #6b7280;
+}
+
+.back-button:hover {
+  background: #e5e7eb;
+  color: #374151;
+  transform: translateX(-2px);
+}
+
+.pin-verification-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.025em;
+  font-family: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+}
+
+.pin-verification-subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin: 0 0 24px 0;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.username-display {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  border: 2px solid #34D399;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.username-label {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.username-value {
+  font-size: 1rem;
+  color: #16a34a;
+  font-weight: 700;
+  font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+}
+
+.pin-input-container {
+  margin-bottom: 32px;
+}
+
+.pin-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.pin-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.pin-input {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  background: #f9fafb;
+  transition: all 0.3s ease;
+  font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+}
+
+.pin-input:focus {
+  outline: none;
+  border-color: #34D399;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.1);
+  transform: translateY(-2px);
+}
+
+.pin-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Wallet Verification Status */
+.wallet-verification-status {
+  margin-top: 20px;
+}
+
+.verification-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  justify-content: center;
+  animation: slideInFromTop 0.3s ease-out;
+}
+
+.verification-status.verifying {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 1px solid #f59e0b;
+  color: #92400e;
+}
+
+.verification-status.verified {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  border: 1px solid #22c55e;
+  color: #166534;
+}
+
+.verification-status.error {
+  background: linear-gradient(135deg, #fef2f2, #fecaca);
+  border: 1px solid #ef4444;
+  color: #dc2626;
+}
+
+.verification-status svg {
+  flex-shrink: 0;
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-message {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.pin-verification-actions {
+  margin-bottom: 32px;
+}
+
+.pin-verification-button {
+  width: 100%;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 
+    0 8px 16px rgba(52, 211, 153, 0.3),
+    0 4px 8px rgba(52, 211, 153, 0.2);
+}
+
+.pin-verification-button:hover:not(.disabled) {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 24px rgba(52, 211, 153, 0.4),
+    0 6px 12px rgba(52, 211, 153, 0.3);
+}
+
+.pin-verification-button:active:not(.disabled) {
+  transform: translateY(0);
+}
+
+.pin-verification-button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.pin-verification-help {
+  text-align: center;
+}
+
+.help-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Fixed Bottom Navigation */
+.fixed-bottom-navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  padding: 20px 24px;
+  pointer-events: none;
+}
+
+.fixed-bottom-navigation .bottom-navigation-container {
+  padding: 0;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.fixed-bottom-navigation .bottom-navigation-box {
+  max-width: 640px;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pin-verification-main {
+    padding: 20px 16px;
+  }
+
+  .pin-verification-content {
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+
+  .pin-verification-title {
+    font-size: 1.75rem;
+  }
+
+  .pin-inputs {
+    gap: 12px;
+  }
+
+  .pin-input {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .username-display {
+    padding: 12px 16px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .username-label {
+    font-size: 0.8rem;
+  }
+
+  .username-value {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pin-verification-content {
+    padding: 24px 20px;
+  }
+
+  .pin-inputs {
+    gap: 8px;
+  }
+
+  .pin-input {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}
