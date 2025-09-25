@@ -1,4 +1,4 @@
-# 🚀 Furtim - Private Payment System
+# 🚀 Furtim - Private Payment 
 
 **Furtim** lets you send and receive truly private payments on Aptos — your transactions stay unlinkable and your real wallet address stays hidden.
 
