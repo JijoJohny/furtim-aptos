@@ -7,8 +7,40 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Furtim - Private payments on Aptos blockchain"
     />
+    <!-- Prevent unwanted wallet injections -->
+    <meta name="wallet-support" content="aptos-only" />
+    <!-- Content Security Policy to prevent unwanted injections -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; object-src 'none'; base-uri 'self';" />
+    <!-- Early Ethereum injection blocker -->
+    <script>
+      // Inline early blocker to run before any extensions
+      (function() {
+        'use strict';
+        if (typeof window !== 'undefined') {
+          try {
+            Object.defineProperty(window, 'ethereum', {
+              value: null,
+              writable: false,
+              enumerable: false,
+              configurable: false
+            });
+          } catch (e) {
+            try {
+              const descriptor = Object.getOwnPropertyDescriptor(window, 'ethereum');
+              if (descriptor && descriptor.configurable) {
+                Object.defineProperty(window, 'ethereum', {
+                  writable: false,
+                  configurable: false
+                });
+              }
+            } catch (e2) {}
+          }
+          console.log('Early Ethereum blocker active - Aptos wallets only');
+        }
+      })();
+    </script>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -24,10 +56,12 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Furtim - Private Payments on Aptos</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Block Ethereum wallet injection before any other scripts -->
+    <script src="%PUBLIC_URL%/block-ethereum-injection.js"></script>
     <div id="root"></div>
     <!--
       This HTML file is a template.

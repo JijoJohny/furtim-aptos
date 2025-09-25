@@ -48,14 +48,18 @@ const StealthPaymentModal: React.FC<StealthPaymentModalProps> = ({
       setError(null);
       console.log('🔮 Generating stealth payment...');
       
-      // Create ephemeral keypair for this payment
+      // Create ephemeral keypair for this payment (sender generates this)
       const ephemeralKeyPair = await stealthAddressService.createEphemeralKeyPair();
-      console.log('✅ Ephemeral keypair created');
+      console.log('✅ Ephemeral keypair created by sender');
 
-      // Derive stealth address from recipient's meta keys and our ephemeral key
+      // Get recipient's scan public key from the payment link
+      // This would normally be retrieved from the payment link data
+      const recipientScanPublicKey = new Uint8Array(32); // Placeholder - would come from payment link
+      
+      // Create recipient meta keys with scan public key from payment link
       const recipientMetaKeys = {
-        scanPublicKey: new Uint8Array(32), // Would be retrieved from recipient
-        spendPublicKey: new Uint8Array(32), // Would be retrieved from recipient
+        scanPublicKey: recipientScanPublicKey, // From payment link
+        spendPublicKey: new Uint8Array(32), // Would be retrieved from recipient's on-chain registration
         scanPrivateKey: new Uint8Array(32), // Not needed for sender
         spendPrivateKey: new Uint8Array(32), // Not needed for sender
       };

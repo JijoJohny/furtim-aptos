@@ -4,8 +4,6 @@ version = "0.0.1"
 
 [dependencies]
 AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework", rev = "aptos-release-v1.20" }
-AptosStdlib = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-stdlib", rev = "aptos-release-v1.20" }
-MoveStdlib = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/move-stdlib", rev = "aptos-release-v1.20" }
 
 [addresses]
-furtim = "0x2e04b9fdd49ae932c8b08f04540363233093fec62579139722eb4b6a9f33464c"
+furtim = "0x25d93ca111e3b87e56c5f404073f7f74042e7fce04531fb97a6e597bb57b80bc"
